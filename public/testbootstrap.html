@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<form action="/testbootstrap" method="post" class="form-horizontal" role="form">
+		<div class="row">
+			<div class="col-md-2">Dominio:</div>
+			<div class="radio">
+				<div class="col-md-2">
+					<label>
+						<input type="radio" name="domain" value="www.santalucia.es" checked>www.santalucia.es
+					</label>
+				</div>
+
+				<div class="col-md-2">
+					<label>
+						<input type="radio" name="domain" value="cdn1.santalucia.es">cdn*.santalucia.es
+					</label>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-2">Substring or Regexp:</div>
+			<div class="radio">
+				<div class="col-md-2">
+					<label>
+						<input type="radio" name="urlstring" value="Substring" checked>Substring
+					</label>
+				</div>
+				<div class="col-md-2">
+					<label>
+						<input type="radio" name="urlstring" value="Regexp">Regexp
+					</label>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-2"></div>
+				<div class="col-md-4 form-group form-group-lg">
+					<input type="text" class="form-control" placeholder="Substring /, Regex /$" id="formGroupInputLarge">
+					<span class="help-block">Home: Regex, /$</span>
+					<span class="help-block">ALL: Substring, /</span>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-4">
+				<button type="button" class="btn btn-warning btn-primary btn-lg btn-block">Preview!</button>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>

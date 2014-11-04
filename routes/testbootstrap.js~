@@ -1,0 +1,9 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET testbootstrap. */
+router.get('/', function(req, res) {
+  res.sendFile('/public/testbootstrap.html');
+});
+
+module.exports = router;

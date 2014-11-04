@@ -1,0 +1,30 @@
+extends layout
+
+block content
+ div.container
+  form.form-horizontal(action='/',method='post')
+   br
+   div.row
+    div.col-md-4
+     | Dominio:
+    div.col-md-4
+     div.radio
+      label.radio-inline(for=optionsRadios1) www.santalucia.es
+       input(type='radio', name='domain', id=optionsRadios1, value='www.santalucia.es', checked='checked')
+    div.col-md-4
+      label.radio-inline(for=optionsRadios2) cdn*.santalucia.es
+       input(type='radio', name='domain', id=optionsRadios2, value='cdn1.santalucia.es')
+   br
+   div.row
+    div.col-md-4
+     h2 Substring or Regexp:
+    div.col-md-8
+     div.radio
+      label.radio-inline(for=optionsRadios1) Substring
+       input(type='radio', name='urlstring', id=optionsRadios1, value='Substring', checked='checked')
+      label.radio-inline(for=optionsRadios2) Regexp
+       input(type='radio', name='urlstring', id=optionsRadios2, value='Regexp')
+   br
+   div.row
+    div.col-md-12
+     button(type="button", class="btn btn-danger" ) Invalidar!
