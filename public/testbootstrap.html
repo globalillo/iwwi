@@ -1,68 +1,54 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title></title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
 	<form action="/testbootstrap" method="post" class="form-horizontal" role="form">
-		<div class="row">
-			<div class="col-md-2">Dominio:</div>
-			<div class="radio">
-				<div class="col-md-2">
-					<label>
-						<input type="radio" name="domain" value="www.santalucia.es" checked>www.santalucia.es
-					</label>
-				</div>
-
-				<div class="col-md-2">
-					<label>
-						<input type="radio" name="domain" value="cdn1.santalucia.es">cdn*.santalucia.es
-					</label>
-				</div>
-			</div>
+		<!-- ROW 1 -->
+		<div class="btn-group col-sm-2" data-toggle="buttons">
+			<label class="btn btn-primary active col-sm-1">
+				<input type="radio" name="domain" id="1" value="www.santalucia.es" autocomplete="off" checked>www.santalucia.es
+			</label>
+			<label class="btn btn-primary col-sm-1">
+				<input type="radio" name="domain" id="2" value="cdn1.santalucia.es" autocomplete="off">cdn*.santalucia.es
+			</label>
 		</div>
 		<br>
-		<div class="row">
-			<div class="col-md-2">Substring or Regexp:</div>
-			<div class="radio">
-				<div class="col-md-2">
-					<label>
-						<input type="radio" name="urlstring" value="Substring" checked>Substring
-					</label>
-				</div>
-				<div class="col-md-2">
-					<label>
-						<input type="radio" name="urlstring" value="Regexp">Regexp
-					</label>
-				</div>
-			</div>
+		<!-- ROW 2 -->
+		<div class="btn-group col-sm-2" data-toggle="buttons">
+			<label class="btn btn-primary active col-sm-1">
+				<input type="radio" name="urlstring" id="1" value="substring" autocomplete="off" checked>Subcadena
+			</label>
+			<label class="btn btn-primary col-sm-1">
+				<input type="radio" name="urlstring" id="2" value="regex" autocomplete="off">Expresi&oacute;n
+			</label>
 		</div>
-		<br>
-		<div class="row">
-			<div class="col-md-2"></div>
-				<div class="col-md-4 form-group form-group-lg">
-					<input type="text" class="form-control" placeholder="Substring /, Regex /$" id="formGroupInputLarge">
-					<span class="help-block">Home: Regex, /$</span>
-					<span class="help-block">ALL: Substring, /</span>
-				</div>
-			</div>
+		<!-- ROW 3 -->
+		<div class="form-group col-sm-2">
+			<input type="text" class="form-control" placeholder="Substring /, Regex /$" id="formGroupInputLarge">
+			<span class="help-block">Home: Regex, /$</span>
+			<span class="help-block">ALL: Substring, /</span>
 		</div>
-		<br>
-		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-4">
-				<button type="button" class="btn btn-warning btn-primary btn-lg btn-block">Preview!</button>
-			</div>
+		<!-- ROW 4 -->
+		<div class="form-group col-sm-2">
+			<button type="button" class="btn btn-warning btn-primary btn-lg btn-block">Preview!</button>
 		</div>
-	</form>
+		<!-- container -->
+	</div>
+</form>
 </div>
-   </body>
+</body>
 </html>
 
+<!--
+
+Success! Your configuration has been saved to https://gist.github.com/4cc8522f19a4b3bbc3d4 and can be revisited here at http://getbootstrap.com/customize/?id=4cc8522f19a4b3bbc3d4 for further customization.
+
+-->
