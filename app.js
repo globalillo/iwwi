@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var testbootstrap = require('./routes/testbootstrap');
 
 var app = express();
@@ -24,9 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/testbootstrap', testbootstrap);
-
 app.locals.pretty = true;
 
 

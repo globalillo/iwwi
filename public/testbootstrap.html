@@ -1,54 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title></title>
-<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="/bootstrap/js/bootstrap.min.js"></script>
+<title>Interfaz de invalidación</title>
+<link rel="stylesheet" href="testbootstrap_files/bootstrap.css">
+<link rel="stylesheet" href="testbootstrap_files/bootstrap-theme.css">
+<script src="testbootstrap_files/jquery.js"></script>
+<script src="testbootstrap_files/bootstrap.js"></script>
+<style>
+.btn-default.active {
+	background-color: #d9534f;
+}
+</style>
 </head>
 <body>
-<div class="container">
-	<form action="/testbootstrap" method="post" class="form-horizontal" role="form">
-		<!-- ROW 1 -->
-		<div class="btn-group col-sm-2" data-toggle="buttons">
-			<label class="btn btn-primary active col-sm-1">
-				<input type="radio" name="domain" id="1" value="www.santalucia.es" autocomplete="off" checked>www.santalucia.es
+<div class="container-fluid">
+	<h1 class="text-primary">Interfaz de invalidación<small>http://www.santalucia.es</small></h1>
+	<form action="/" method="post" role="form" class="form-horizontal" onsubmit="container-fluid.disabled = true">
+		<!-- ROW 1-->
+		<div id="tile-sort" data-toggle="buttons" class="btn-group row col-xs-2">
+			<h2>Dominio:</h2><br>
+			<label class="btn btn-default active btn-block">
+				<input id="1" name="domain" value="www.santalucia.es" autocomplete="off" checked="checked" type="radio">www.santalucia.es
 			</label>
-			<label class="btn btn-primary col-sm-1">
-				<input type="radio" name="domain" id="2" value="cdn1.santalucia.es" autocomplete="off">cdn*.santalucia.es
-			</label>
-		</div>
-		<br>
-		<!-- ROW 2 -->
-		<div class="btn-group col-sm-2" data-toggle="buttons">
-			<label class="btn btn-primary active col-sm-1">
-				<input type="radio" name="urlstring" id="1" value="substring" autocomplete="off" checked>Subcadena
-			</label>
-			<label class="btn btn-primary col-sm-1">
-				<input type="radio" name="urlstring" id="2" value="regex" autocomplete="off">Expresi&oacute;n
+			<label class="btn btn-default btn-block">
+				<input id="2" name="domain" value="cdn1.santalucia.es" autocomplete="off" type="radio">cdn?.santalucia.es
 			</label>
 		</div>
-		<!-- ROW 3 -->
-		<div class="form-group col-sm-2">
-			<input type="text" class="form-control" placeholder="Substring /, Regex /$" id="formGroupInputLarge">
-			<span class="help-block">Home: Regex, /$</span>
-			<span class="help-block">ALL: Substring, /</span>
+		<!-- ROW 2-->
+		<div data-toggle="buttons" class="btn-group row col-xs-2">
+			<h2>Subcadena o expresión:</h2><br>
+			<label class="btn btn-default active btn-block">
+				<input id="1" name="mode" value="substring" autocomplete="off" checked="checked" type="radio">Subcadena
+			</label>
+			<label class="btn btn-default btn-block">
+				<input id="2" name="mode" value="regex" autocomplete="off" type="radio">Expresión
+			</label>
 		</div>
-		<!-- ROW 4 -->
-		<div class="form-group col-sm-2">
-			<button type="button" class="btn btn-warning btn-primary btn-lg btn-block">Preview!</button>
+		<!-- ROW 3-->
+		<div class="form-group col-xs-2">
+			<input id="formGroupInputLarge" name="urlstring" required="" placeholder="Escribe la subcadena o expresión deseada." class="form-control" type="text"><span class="help-block">Para invalidar la <em>home </em>selecciona <strong>Expresión </strong>y escribe <strong>/$</strong></span><span class="help-block">Para invalidar <strong>toda </strong>la <em>cache </em>del dominio seleccionado selecciona <strong>Subcadena </strong>y escribe <strong>/</strong></span>
 		</div>
-		<!-- container -->
-	</div>
-</form>
+		<!-- ROW 4-->
+		<div class="form-group col-xs-2">
+			<button onclick="this.container-fluid.disabled=true;this.value='Sending, please wait...';"  name="action" value="preview" class="btn btn-warning btn-default btn-lg btn-block">Previsualizar</button>
+		</div>
+		<!-- container-->
+	</form>
 </div>
-</body>
-</html>
 
-<!--
 
-Success! Your configuration has been saved to https://gist.github.com/4cc8522f19a4b3bbc3d4 and can be revisited here at http://getbootstrap.com/customize/?id=4cc8522f19a4b3bbc3d4 for further customization.
-
+</body></html>
+<!--Success! Your configuration has been saved to https://gist.github.com/4cc8522f19a4b3bbc3d4 and can be revisited here at http://getbootstrap.com/customize/?id=4cc8522f19a4b3bbc3d4 for further customization.
 -->

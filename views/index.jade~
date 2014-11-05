@@ -1,30 +1,67 @@
-extends layout
+doctype html
+html(lang="en")
+	head
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		title Interfaz de invalidaci&#243;n
+		link(rel="stylesheet", href="/bootstrap/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/bootstrap/css/bootstrap-theme.min.css")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+		script(src="/bootstrap/js/bootstrap.min.js")
+		style
+			|.btn-default.active {
+			| background-color: #d9534f;
+			|}
+	body
+		.container-fluid
+			h1.text-primary
+				| Interfaz de invalidaci&#243;n
+				small http://www.santalucia.es
+			form.form-horizontal(action="/testbootstrap", method="post", role="form")
+				// ROW 1
+				#tile-sort.btn-group.row.col-xs-2(data-toggle="buttons")
+					h2 Dominio:
+					br
+					label.btn.btn-default.active.btn-block
+						input#1(type="radio", name="domain", value="www.santalucia.es", autocomplete="off", checked="")
+						| www.santalucia.es
+					label.btn.btn-default.btn-block
+						input#2(type="radio", name="domain", value="cdn1.santalucia.es", autocomplete="off")
+						| cdn?.santalucia.es
+				p
+					// ROW 2
+					.btn-group.row.col-xs-2(data-toggle="buttons")
+						h2 Subcadena o expresi&#243;n:
+						br
+						label.btn.btn-default.active.btn-block
+							input#1(type="radio", name="mode", value="substring", autocomplete="off", checked="")
+							| Subcadena
+						label.btn.btn-default.btn-block
+							input#2(type="radio", name="mode", value="regex", autocomplete="off")
+							| Expresi&#243;n
+				p
+					// ROW 3
+					.form-group.col-xs-2
+						input#formGroupInputLarge.form-control(name="urlstring", type="text", required placeholder="Escribe la subcadena o expresión deseada.")
+						span.help-block
+							| Para invalidar la 
+							em home 
+							| selecciona 
+							strong Expresi&#243;n 
+							| y escribe 
+							strong /$
+						span.help-block
+							| Para invalidar 
+							strong toda 
+							| la 
+							em cache 
+							| del dominio seleccionado selecciona 
+							strong Subcadena 
+							| y escribe 
+							strong /
+					// ROW 4
+					.form-group.col-xs-2
+						button.btn.btn-warning.btn-default.btn-lg.btn-block(name="action", value="preview", type="submit") Previsualizar
+					// container
+//
+	Success! Your configuration has been saved to https://gist.github.com/4cc8522f19a4b3bbc3d4 and can be revisited here at http://getbootstrap.com/customize/?id=4cc8522f19a4b3bbc3d4 for further customization.
 
-block content
- div.container
-  form.form-horizontal(action='/',method='post')
-   br
-   div.row
-    div.col-md-4
-     | Dominio:
-    div.col-md-4
-     div.radio
-      label.radio-inline(for=optionsRadios1) www.santalucia.es
-       input(type='radio', name='domain', id=optionsRadios1, value='www.santalucia.es', checked='checked')
-    div.col-md-4
-      label.radio-inline(for=optionsRadios2) cdn*.santalucia.es
-       input(type='radio', name='domain', id=optionsRadios2, value='cdn1.santalucia.es')
-   br
-   div.row
-    div.col-md-4
-     h2 Substring or Regexp:
-    div.col-md-8
-     div.radio
-      label.radio-inline(for=optionsRadios1) Substring
-       input(type='radio', name='urlstring', id=optionsRadios1, value='Substring', checked='checked')
-      label.radio-inline(for=optionsRadios2) Regexp
-       input(type='radio', name='urlstring', id=optionsRadios2, value='Regexp')
-   br
-   div.row
-    div.col-md-12
-     button(type="button", class="btn btn-danger" ) Invalidar!
