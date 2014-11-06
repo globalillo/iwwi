@@ -1,6 +1,7 @@
 doctype html
 html(lang="en")
 	head
+		meta(http-equiv="content-type", content="text/html; charset=UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		title Interfaz de invalidaci&#243;n
 		link(rel="stylesheet", href="/bootstrap/css/bootstrap.min.css")
@@ -9,34 +10,36 @@ html(lang="en")
 		script(src="/bootstrap/js/bootstrap.min.js")
 		style
 			|.btn-default.active {
-			| background-color: #d9534f;
+			| background-color: #5bc0de;
 			|}
 	body
 		.container-fluid
 			h1.text-primary
 				| Interfaz de invalidaci&#243;n
 				small http://www.santalucia.es
-			form.form-horizontal(action="/testbootstrap", method="post", role="form")
+			// form.form-horizontal(action="/", method="post", role="form")
+			textarea#result.form-control.input-sm.col-xs-2.disabled(style="resize: none;")
+			span.help-block
+				| &Uacute;ltimas peticiones recibidas. 
+			form#form-preview.form-horizontal(role="form")
 				// ROW 1
 				#tile-sort.btn-group.row.col-xs-2(data-toggle="buttons")
 					h2 Dominio:
-					br
 					label.btn.btn-default.active.btn-block
-						input#1(type="radio", name="domain", value="www.santalucia.es", autocomplete="off", checked="")
+						input#domain1(type="radio", name="domain", value="www.santalucia.es", autocomplete="off", checked="")
 						| www.santalucia.es
 					label.btn.btn-default.btn-block
-						input#2(type="radio", name="domain", value="cdn1.santalucia.es", autocomplete="off")
+						input#domain2(type="radio", name="domain", value="cdn1.santalucia.es", autocomplete="off")
 						| cdn?.santalucia.es
 				p
 					// ROW 2
 					.btn-group.row.col-xs-2(data-toggle="buttons")
 						h2 Subcadena o expresi&#243;n:
-						br
 						label.btn.btn-default.active.btn-block
-							input#1(type="radio", name="mode", value="substring", autocomplete="off", checked="")
+							input#mode1(type="radio", name="mode", value="substring", autocomplete="off", checked="")
 							| Subcadena
 						label.btn.btn-default.btn-block
-							input#2(type="radio", name="mode", value="regex", autocomplete="off")
+							input#mode2(type="radio", name="mode", value="regex", autocomplete="off")
 							| Expresi&#243;n
 				p
 					// ROW 3
@@ -60,8 +63,11 @@ html(lang="en")
 							strong /
 					// ROW 4
 					.form-group.col-xs-2
-						button.btn.btn-warning.btn-default.btn-lg.btn-block(name="action", value="preview", type="submit") Previsualizar
+						input.form-control(name="action", type="hidden", required value="preview")
+						// button.btn.btn-warning.btn-default.btn-lg.btn-block(name="action", value="preview", type="submit") Previsualizar
+						button#preview.btn.btn-warning.btn-default.btn-lg.btn-block(type="submit",data-loading-text="Enviando..."data-complete-text="Previsualizar") Previsualizar
 					// container
+			script(src="/iwwi.js")
 //
 	Success! Your configuration has been saved to https://gist.github.com/4cc8522f19a4b3bbc3d4 and can be revisited here at http://getbootstrap.com/customize/?id=4cc8522f19a4b3bbc3d4 for further customization.
 
